@@ -6,6 +6,12 @@
 //  Copyright © 2018年 zhiqiang.li. All rights reserved.
 //
 
+#import <BBSSDKUI/BBSUIForumHomeViewController.h>
+#import <MobLink/MobLink.h> //可选
+#import <MobLink/IMLSDKRestoreDelegate.h> //可选
+
+#import <BBSSDKUI/BBSUIForumHomeViewController.h>
+
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
@@ -17,6 +23,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    BBSUIForumHomeViewController *homeVC = [BBSUIForumHomeViewController forumHomeViewControllerWithTitle:@"bbs"];
+    [self.window setRootViewController:homeVC];
+    [_window setRootViewController:homeVC];
+    [_window makeKeyAndVisible];
     return YES;
 }
 
